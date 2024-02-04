@@ -112,3 +112,7 @@ C:\Users\Bojić\Desktop\RentACar\RentACar\RentACar\bin\roslyn\vbc.exe.config
 C:\Users\Bojić\Desktop\RentACar\RentACar\RentACar\bin\roslyn\vbc.rsp
 C:\Users\Bojić\Desktop\RentACar\RentACar\RentACar\bin\roslyn\VBCSCompiler.exe
 C:\Users\Bojić\Desktop\RentACar\RentACar\RentACar\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Bojić\Desktop\RentACar\RentACar\RentACar\bin\AutoMapper.dll
+C:\Users\Bojić\Desktop\RentACar\RentACar\RentACar\bin\AutoMapper.xml
+C:\Users\Bojić\Desktop\RentACar\RentACar\RentACar\bin\Swashbuckle.Core.dll
+C:\Users\Bojić\Desktop\RentACar\RentACar\RentACar\bin\WebActivatorEx.dll

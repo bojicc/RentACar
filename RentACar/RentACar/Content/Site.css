@@ -78,9 +78,9 @@ button > a {
     text-decoration: none;
 }
 
-    button > a:hover {
-        color: black;
-    }
+button > a:hover {
+    color: black;
+}
 
 .btn:hover {
     background-color: #1abc9c;

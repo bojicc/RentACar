@@ -1,27 +1,27 @@
 ﻿@model IEnumerable<RentACar.Models.Rental>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Rentals";
 }
 
-<h2>Index</h2>
+<h2 class="firstTitle mt-3">Rentals</h2>
 
-<p>
+<button class="btn mb-3">
     @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+</button>
+<table class="table text-center">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.DateRented)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateReturned)
+            @Html.DisplayNameFor(model => model.Customer.Name)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Car.Manufacturer)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Customer.Name)
+            Date Rented
+        </th>
+        <th>
+            Date Returned
         </th>
         <th></th>
     </tr>
@@ -29,16 +29,17 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.DateRented)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateReturned)
+            @Html.DisplayFor(modelItem => item.Customer.Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Car.Manufacturer)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Customer.Name)
+            @Html.DisplayFor(modelItem => item.DateRented)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateReturned)
+
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.RentalId }) |
