@@ -1,0 +1,60 @@
+﻿@model IEnumerable<RentACar.Models.Car>
+
+@{
+    ViewBag.Title = "ReadOnlyList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css">
+
+<h2 class="firstTitle mt-3 mb-3">Cars</h2>
+
+<div>
+    <table id="cars" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Manufacturer</th>
+                <th>Model</th>
+                <th>LicensePlate</th>
+                <th>Year</th>
+                <th>Avaiable</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+
+@section scripts
+{
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var table = $("#cars").DataTable({
+                ajax: {
+                    "url": "/Cars/GetData",
+                    "dataSrc": ""
+                },
+                "columns": [
+                    { "data": "Manufacturer" },
+                    { "data": "Model" },
+                    { "data": "LicensePlate" },
+                    { "data": "Year" },
+                    {
+                        "data": "Available",
+                        render: function (data) {
+                            if (data)
+                                return "Yes";
+                            else
+                                return "No";
+                        }
+                    }
+                ],
+                "language": {
+                    "emptyTable": "No data found"
+                }
+            });
+        });
+    </script>
+}
+
