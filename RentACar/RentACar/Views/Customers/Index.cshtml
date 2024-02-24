@@ -1,21 +1,21 @@
 ﻿@model IEnumerable<RentACar.Models.Customer>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Customers";
 }
 
-<h2>Index</h2>
+<h2 class="firstTitle mt-3">Customers</h2>
 
-<p>
+<button class="btn mb-3">
     @Html.ActionLink("Create New", "Create")
-</p>
+</button>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DriverLicNo)
+            Driver License Number
         </th>
         <th></th>
     </tr>
