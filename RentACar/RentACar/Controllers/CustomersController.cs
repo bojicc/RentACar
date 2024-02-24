@@ -17,7 +17,10 @@ namespace RentACar.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            return View(db.Customers.ToList());
+            if (User.IsInRole(RoleName.Admin) || User.IsInRole(RoleName.Employee))
+                return View(db.Customers.ToList());
+
+            return View("ReadOnlyList");
         }
 
         // GET: Customers/Details/5
@@ -122,6 +125,19 @@ namespace RentACar.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        [AllowAnonymous]
+        public ActionResult GetData()
+        {
+            List<Customer> list = db.Customers.ToList();
+            var subCategoryToReturn = list.Select(S => new
+            {
+                CustomerId = S.CustomerId,
+                Name = S.Name,
+                DriverLicNo = S.DriverLicNo
+            });
+            return Json(subCategoryToReturn, JsonRequestBehavior.AllowGet);
         }
     }
 }

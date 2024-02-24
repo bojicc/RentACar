@@ -54,15 +54,15 @@ namespace RentACar
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "299655709780114",
+               appSecret: "4cedf517da277e30bbb9822afd625511");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "326190136646-1bnlm1ubrr095luu4ck6vspuuvsmrbb9.apps.googleusercontent.com",
+                ClientSecret = "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"
+            });
         }
     }
 }
